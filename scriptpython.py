@@ -6,7 +6,7 @@ def fairecommandeenbash(commande):
 fairecommandeenbash("echo 'UBUNTU POST-INSTALL SCRIPT' > log.txt")
 
 
-fairecommandeenbash("echo 'mise a jour de apt et apt-get' >> log.txt3")
+fairecommandeenbash("echo 'mise a jour de apt et apt-get' >> log.txt")
 fairecommandeenbash("sudo apt update && sudo apt upgrade") 
 fairecommandeenbash("sudo apt-get update && sudo apt-get upgrade")
 
