@@ -17,6 +17,8 @@ fairecommandeenbash("sudo apt-get install --yes git git-extras build-essential p
 fairecommandeenbash("echo 'Ajout de la clé PGP et du PPA d microsoft' >> log.txt")
 
 fairecommandeenbash("curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg")
+fairecommandeenbash("sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/")
+fairecommandeenbash("sudo sh -c 'echo \"deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main\" > /etc/apt/sources.list.d/vscode.list'")
 
 fairecommandeenbash("echo 'instalation de vscode' >> log.txt")
 
