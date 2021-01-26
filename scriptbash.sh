@@ -21,6 +21,8 @@ echo "Ajout de la clé PGP et du PPA d microsoft" >> log.txt
 ##################### Ajout de la clé PGP de microsoft pour etre sur de bien installé leur version de VSCODE ################
 # Avec curl qui est un autre gestionnaire de paquet ########################################
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 ######################################################################################################################################
 
 echo "instalation de vscode" >> log.txt
